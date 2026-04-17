@@ -10,6 +10,8 @@ import healthRoutes from './routes/health';
 
 const app = express();
 
+app.disable('x-powered-by');
+
 initializeDatabase();
 
 app.use(express.json());

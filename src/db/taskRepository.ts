@@ -88,8 +88,7 @@ export function updateTask(id: string, userId: string, input: UpdateTaskInput): 
 
   updates.push('updatedAt = ?');
   values.push(now);
-  values.push(id);
-  values.push(userId);
+  values.push(id, userId);
 
   const stmt = db.prepare(`
     UPDATE tasks SET ${updates.join(', ')} WHERE id = ? AND userId = ?
